@@ -1,19 +1,27 @@
-# llmops-semantic-search-aws
+# 🔍 LLMOps Semantic Search on AWS
 
-A scalable semantic search system using LLMOps principles and AWS cloud services. This project demonstrates how to deploy a vector search pipeline powered by embeddings and LangChain on AWS infrastructure, with CI/CD and infrastructure-as-code best practices.
+This project demonstrates a production-grade LLMOps stack for document understanding and real-time semantic search using AWS infrastructure.
 
 ---
 
 ## 🧠 Use Case
 
-Perform semantic search over unstructured documents (PDFs, web data, etc.) using vector databases and language models — ideal for internal knowledge retrieval, customer support automation, or enterprise Q&A systems.
+Real-time policy document classification, Q&A, and summarization using LangChain + FAISS, served through a Lambda-powered API on ECS.
 
 ---
 
-## 🏗 Architecture Diagram
+## 🧱 Architecture
 
-```text
-Client → API Gateway → Lambda (LangChain Retriever) → Vector Store (FAISS)
-                                     ↘
-                                 S3 / External Data
-Infrastructure managed with Terraform → ECS, Lambda, etc.
+- **LLM**: OpenAI via LangChain
+- **Vector DB**: FAISS (HNSW)
+- **Infra**: ECS + Fargate + Lambda + API Gateway
+- **Orchestration**: Terraform
+- **Monitoring**: CloudWatch, Lambda logs
+
+![Architecture](./architecture.png) <!-- Optional image if uploaded -->
+
+---
+
+## 🚀 API Endpoint
+
+Send GET request:
