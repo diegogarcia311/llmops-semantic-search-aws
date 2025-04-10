@@ -1,5 +1,3 @@
----
-
 ## 🧱 AWS Infrastructure
 
 - **ECS + Fargate**: Hosts the containerized LangChain worker responsible for document indexing and inference
